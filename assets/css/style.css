@@ -1,0 +1,1012 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Jura";
+    scroll-behavior: smooth;
+    color: #333333;
+    transition: .5s;
+}
+
+body {
+    background: #F3F3F3;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "Jura";
+    src: url(../fonts/Jura-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Jura";
+    src: url(../fonts/Jura-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Jura";
+    src: url(../fonts/Jura-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Jura";
+    src: url(../fonts/Jura-Bold.ttf);
+    font-weight: 700;
+}
+
+/* Подключение шрифтов конец */
+
+/* Контейнер для контента */
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.py-150 {
+    padding-bottom: 150px;
+}
+
+/* Контейнер для контента конец */
+
+/* Градация текста */
+h1 {
+    font-weight: 700;
+    font-size: 59px;
+    line-height: 115%;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 49px;
+    line-height: 105%;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.text-descrip {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 115%;
+}
+
+.number {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 115%;
+}
+
+/* Градация текста конец */
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+header nav a:hover {
+    transform: translatey(10px);
+    -webkit-transform: translatey(10px);
+}
+
+header nav a,
+footer a,
+footer p {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.header-profile {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+
+.header-profile img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.active {
+    color: #53377A;
+    font-weight: 700;
+}
+
+/* header end */
+
+/* banner */
+.banner {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.banner-descrip {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.banner-descrip h1 {
+    width: 543px;
+}
+
+.banner-season {
+    padding: 9px 52px;
+    width: 218px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #53377A;
+}
+
+.banner-season p {
+    color: #53377A;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.banner-text p {
+    width: 466px;
+}
+
+.banner-text .carousel-wrapper {
+    display: none;
+}
+
+button {
+    display: inline-block;
+    position: relative;
+    z-index: 1000;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 115%;
+    border: none;
+    color: #F3F3F3;
+    border-radius: 40px;
+    background: linear-gradient(101deg, #53377A 13.09%, rgba(148, 65, 28, 0.90) 108.5%, #95411B 108.51%);
+    box-shadow: 2px 5px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: .5s;
+}
+
+button::before {
+    content: "";
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+    background: #53377A;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1000;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+.banner button {
+    padding: 20px 40px;
+}
+
+.carousel-carousel .carousel-wrapper {
+    width: 820px;
+    position: absolute;
+    top: 15%;
+    right: 0;
+}
+
+.carousel-carousel .carousel .carousel-window {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-carousel .carousel .carousel-slides {
+    display: flex;
+    height: 100%;
+    transition: transform 1s;
+}
+
+/* banner end */
+
+/* trend */
+.trend-items {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.trend-item {
+    padding: 10px 20px 20px 20px;
+    background: linear-gradient(#F3F3F3 0 0) padding-box, linear-gradient(101deg, #53377A 13.09%, rgba(148, 65, 28, 0.90) 108.5%, #95411B 108.51%) border-box;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.trend-item::before {
+    content: url(../img/trend/favorite.svg);
+    position: relative;
+    float: right;
+}
+
+.trend-name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.trend-name h3 {
+    height: 71px;
+}
+
+.trend-top {
+    padding-top: 25px;
+}
+
+.trend-price {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 115%;
+}
+
+.trend-size {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trend-size span {
+    color: #53377A;
+    font-weight: 500;
+}
+
+.trend button {
+    padding: 15px 40px;
+}
+
+/* trend end */
+
+/* category */
+.category-items {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.category-item1 {
+    width: 360px;
+    height: 346px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: url(../img/category/category1.png);
+    background-size: cover;
+}
+
+.block1,
+.block2,
+.block3 {
+    position: absolute;
+    left: 80px;
+    width: 360px;
+    height: 346px;
+    top: 250px;
+}
+
+.category-item1:hover .block1 {
+    transition: 1s;
+    -webkit-transition: 1s;
+    transform: translatey(-30px);
+    -webkit-transform: translatey(-30px);
+}
+
+.category-item1:hover {
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+}
+
+.category-item2 {
+    width: 360px;
+    height: 346px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: url(../img/category/category2.png);
+    background-size: cover;
+}
+
+.category-item2:hover .block2 {
+    transition: 1s;
+    -webkit-transition: 1s;
+    transform: translatey(-30px);
+    -webkit-transform: translatey(-30px);
+}
+
+.category-item2:hover {
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+}
+
+.category-item3 {
+    width: 360px;
+    height: 346px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: url(../img/category/category3.png);
+    background-size: cover;
+}
+
+.category-item3:hover .block3 {
+    transition: 1s;
+    -webkit-transition: 1s;
+    transform: translatey(-30px);
+    -webkit-transform: translatey(-30px);
+}
+
+.category-item3:hover {
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+}
+
+.category-button {
+    color: #53377A;
+    background: #F3F3F3;
+    padding: 10px 30px;
+    position: absolute;
+    font-size: 20px;
+}
+
+.category-button:hover {
+    color: #F3F3F3;
+    border: none;
+}
+
+.category-button3 {
+    width: 200px;
+    height: 70px;
+}
+
+/* category end */
+
+/* footer */
+footer {
+    position: relative;
+    padding: 50px 0 50px 0;
+    background: #53377A;
+}
+
+.to_up {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.footer-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.footer-nav a:hover,
+.footer-nav p:hover {
+    transition: 1s;
+    -webkit-transition: 1s;
+    transform: translatex(30px);
+    -webkit-transform: translatex(30px);
+}
+
+.footer-nav-items {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.footer-social {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.footer-social img {
+    width: 30px;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2);
+}
+
+.footer-item h3,
+.footer-item p,
+.footer-item a {
+    color: #F3F3F3;
+}
+
+/* footer end */
+
+/* catalog */
+.catalog,
+.sneaker {
+    padding-top: 80px;
+}
+
+.catalog-items {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.catalog-item {
+    width: 290px;
+    padding: 10px 20px 20px 20px;
+    background: linear-gradient(#F3F3F3 0 0) padding-box, linear-gradient(101deg, #53377A 13.09%, rgba(148, 65, 28, 0.90) 108.5%, #95411B 108.51%) border-box;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.catalog-item::before {
+    content: url(../img/trend/favorite.svg);
+    position: relative;
+    float: right;
+}
+
+.catalog button {
+    padding: 15px 40px;
+}
+
+.catalog-descrip {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.catalog-descrip span {
+    color: #53377A;
+    font-weight: 600;
+}
+
+.catalog-filters,
+.sneaker-filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-sort {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.catalog-search {
+    padding-left: 35px;
+}
+
+.catalog-pagination {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.catalog-pages {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.catalog-page {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    border-radius: 55px;
+    border: none;
+}
+
+.catalog-page:hover {
+    background: rgb(70, 52, 94);
+}
+
+.catalog-page:first-child {
+    background: #53377A;
+}
+
+.catalog-page h3 {
+    color: #F3F3F3;
+}
+
+/* catalog end */
+
+/* sneaker */
+.sneaker-items {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+}
+
+.sneaker-item {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sneaker-item #big img {
+    border-radius: 40px;
+    width: 400px;
+}
+
+.sneaker-goods ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.sneaker-goods img {
+    border-radius: 20px;
+    width: 100px;
+}
+
+.sneaker-item1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sneaker-descrip {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sneaker-descrip .text-descrip {
+    color: #53377A;
+}
+
+.text {
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.sneaker-sizes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sneaker-size {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sneaker-page {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    border-radius: 55px;
+    border: none;
+}
+
+.sneaker-page:hover {
+    background: rgb(70, 52, 94);
+}
+
+.sneaker-page:first-child {
+    background: #53377A;
+}
+
+.sneaker-page h3 {
+    color: #F3F3F3;
+}
+
+.sneaker-item1 h3 span {
+    color: #53377A;
+}
+
+.sneaker-item1 button {
+    width: 332px;
+    height: 70px;
+}
+
+/* sneaker end */
+
+/* shopcart */
+.shopcart {
+    padding-top: 80px;
+}
+
+.shopcart-goods {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 60px;
+}
+
+.shopcart-good {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopcart-colvo {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.shopcart-colvo h3 span {
+    color: #53377A;
+}
+
+.shopcart-num {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #53377A;
+    border-radius: 40px;
+    border: none;
+}
+
+.shopcart-num h3 {
+    color: #F3F3F3;
+}
+
+.shopcart-good button {
+    padding: 20px 60px;
+}
+
+.zakaz {
+    padding: 20px 80px;
+    position: absolute;
+    left: 40%;
+    margin-top: 30px;
+}
+
+/* shopcart end */
+
+#burger,
+[for=burger] {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    [for=burger] {
+        display: block;
+        position: fixed;
+        top: 50px;
+        width: 20px;
+        right: 50px;
+        z-index: 10000;
+    }
+
+    [for=burger]::before {
+        content: url(../img/header/burger-menu.svg);
+        background: #3333335b;
+        padding: 30px 10px 10px 10px;
+        z-index: 10000;
+    }
+
+    .nav,
+    .header-profile {
+        display: none;
+    }
+
+    .active {
+        color: #95411B;
+    }
+
+    nav {
+        width: 375px;
+        height: 40%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        top: 100px;
+        right: 0;
+        background: #53377A;
+        z-index: 5000;
+    }
+
+    nav a {
+        color: #F3F3F3;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    #burger:checked+label+.nav {
+        display: block;
+        animation: show 0.5s ease-in-out;
+    }
+
+    #burger:checked+[for=burger]::before {
+        content: url(../img/header/close.svg);
+        z-index: 5000;
+    }
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    .text-descrip {
+        font-size: 25px;
+    }
+
+    .number {
+        font-size: 35px;
+    }
+
+    .banner-descrip h1 {
+        width: 90%;
+    }
+
+    .banner-text p {
+        display: none;
+    }
+
+    .banner-text .carousel-wrapper {
+        display: block;
+        width: 730px;
+    }
+
+    .banner-text .carousel .carousel-window {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .banner-text .carousel .carousel-slides {
+        display: flex;
+        gap: 30px;
+        height: 100%;
+        transition: transform 1s;
+    }
+
+    .banner-text .banner-img img {
+        width: 730px;
+    }
+
+    .banner button,
+    .sneaker button {
+        width: 90%;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto;
+    }
+
+    .sneaker button {
+        width: 90%;
+        padding: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto;
+    }
+
+    .carousel-carousel .carousel {
+        display: none;
+    }
+
+    .trend-items {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trend-item {
+        width: 320px;
+    }
+
+    .category-items {
+        flex-wrap: wrap;
+    }
+
+    .category-item1,
+    .category-item2,
+    .category-item3 {
+        width: 666px;
+        height: 346px;
+    }
+
+    .block1,
+    .block2 {
+        position: absolute;
+        left: 36%;
+        bottom: 40%;
+    }
+
+    .block3 {
+        position: absolute;
+        left: 25%;
+        bottom: 40%;
+    }
+
+    .category-button {
+        font-size: 25px;
+    }
+
+    .category-button3 {
+        width: auto;
+    }
+
+    footer {
+        background: #53377A;
+    }
+
+    footer .nav,
+    footer .contacts,
+    footer .social h3,
+    .to_up {
+        display: none;
+    }
+
+    .catalog-items {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .catalog-item {
+        margin-top: 0;
+    }
+
+    .sneaker-items {
+        display: block;
+    }
+
+    .sneaker-items .sneaker-item {
+        flex-direction: row;
+        gap: 100px;
+    }
+
+    .sneaker-goods ul {
+        flex-direction: column;
+    }
+
+    .sneaker-item1 {
+        display: block;
+        padding-top: 50px;
+    }
+
+    .sneaker-descrip .text-descrip {
+        font-weight: 600;
+    }
+
+    .sneaker-item1 .text,
+    .sneaker-item1 .sneaker-sizes {
+        padding-top: 30px;
+    }
+
+    .sneaker-item1 .text {
+        font-size: 26px;
+    }
+
+    .sneaker-item1 .number {
+        padding-top: 20px;
+        font-size: 50px;
+    }
+
+    .article {
+        padding: 40px 0;
+    }
+
+    .sneaker-size {
+        padding-top: 20px;
+    }
+
+    .shopcart-goods {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shopcart-good {
+        padding: 10px 20px 20px 20px;
+        background: linear-gradient(#F3F3F3 0 0) padding-box, linear-gradient(101deg, #53377A 13.09%, rgba(148, 65, 28, 0.90) 108.5%, #95411B 108.51%) border-box;
+        border: 2px solid transparent;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    .shopcart-colvo {
+        padding: 20px 0;
+    }
+
+    .shopcart-name {
+        padding-top: 20px;
+    }
+
+    .shopcart-good button {
+        width: 316px;
+        font-size: 25px;
+    }
+
+    .zakaz {
+        margin-top: 40px;
+        font-size: 30px;
+        padding: 25px 100px;
+        left: 22%;
+    }
+
+}
